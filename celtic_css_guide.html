@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celtic CSS Usage Guide</title>
+    <style>
+        /* Celtic-Inspired CSS Stylesheet */
+
+        /* CSS Variables for Celtic Color Palette */
+        :root {
+          /* Primary Celtic Colors */
+          --celtic-forest-green: #2d5016;      /* Deep forest green - connection to nature */
+          --celtic-emerald: #50c878;           /* Vibrant emerald - Irish landscapes */
+          --celtic-stone-gray: #708090;        /* Stone gray - ancient monuments */
+          --celtic-gold: #ffd700;              /* Celtic gold - treasures and torcs */
+          --celtic-bronze: #cd7f32;            /* Bronze - Celtic metalwork */
+          --celtic-rust: #b7410e;              /* Rust red - warrior shields */
+          --celtic-cream: #f5f5dc;             /* Cream - parchment and bone */
+          --celtic-midnight: #1a1a2e;          /* Midnight blue - mystical nights */
+          --celtic-silver: #c0c0c0;            /* Silver - Celtic jewelry */
+          --celtic-earth: #8b4513;             /* Earth brown - connection to land */
+        }
+
+        /* Body and Base Elements */
+        body {
+          background-color: var(--celtic-cream);
+          color: var(--celtic-midnight);
+          font-family: 'Times New Roman', serif;
+          line-height: 1.6;
+          margin: 0;
+          padding: 20px;
+          background-image: 
+            radial-gradient(circle at 25% 25%, var(--celtic-emerald) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, var(--celtic-forest-green) 0%, transparent 50%);
+          background-attachment: fixed;
+        }
+
+        /* Headers - Inspired by Celtic manuscripts */
+        h1 {
+          color: var(--celtic-forest-green);
+          font-size: 2.5em;
+          text-align: center;
+          text-shadow: 2px 2px 4px var(--celtic-stone-gray);
+          border-bottom: 3px solid var(--celtic-gold);
+          padding-bottom: 10px;
+          margin-bottom: 30px;
+          font-weight: bold;
+          letter-spacing: 2px;
+        }
+
+        h2 {
+          color: var(--celtic-rust);
+          font-size: 2em;
+          border-left: 5px solid var(--celtic-bronze);
+          padding-left: 15px;
+          margin-top: 25px;
+          text-shadow: 1px 1px 2px var(--celtic-stone-gray);
+        }
+
+        h3 {
+          color: var(--celtic-emerald);
+          font-size: 1.5em;
+          margin-top: 20px;
+          border-bottom: 1px dotted var(--celtic-stone-gray);
+          padding-bottom: 5px;
+        }
+
+        h4, h5, h6 {
+          color: var(--celtic-bronze);
+          margin-top: 15px;
+        }
+
+        /* Paragraphs and Text */
+        p {
+          color: var(--celtic-midnight);
+          margin-bottom: 15px;
+          text-align: justify;
+          padding: 0 10px;
+        }
+
+        /* Links - Celtic knotwork inspired */
+        a {
+          color: var(--celtic-emerald);
+          text-decoration: none;
+          border-bottom: 2px solid transparent;
+          transition: all 0.3s ease;
+          font-weight: bold;
+        }
+
+        a:hover {
+          color: var(--celtic-gold);
+          border-bottom: 2px solid var(--celtic-gold);
+          text-shadow: 1px 1px 2px var(--celtic-stone-gray);
+        }
+
+        /* Lists - Styled like ancient Celtic scrolls */
+        ul {
+          background-color: rgba(112, 128, 144, 0.1);
+          border-left: 4px solid var(--celtic-bronze);
+          padding: 15px 20px;
+          margin: 20px 0;
+          border-radius: 0 8px 8px 0;
+        }
+
+        ol {
+          background-color: rgba(45, 80, 22, 0.1);
+          border-left: 4px solid var(--celtic-forest-green);
+          padding: 15px 20px;
+          margin: 20px 0;
+          border-radius: 0 8px 8px 0;
+        }
+
+        li {
+          color: var(--celtic-midnight);
+          margin-bottom: 8px;
+          padding-left: 5px;
+        }
+
+        li::marker {
+          color: var(--celtic-gold);
+          font-weight: bold;
+        }
+
+        /* Tables - Like Celtic manuscripts */
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          margin: 20px 0;
+          background-color: var(--celtic-cream);
+          border: 2px solid var(--celtic-stone-gray);
+          border-radius: 8px;
+          overflow: hidden;
+        }
+
+        th {
+          background-color: var(--celtic-forest-green);
+          color: var(--celtic-gold);
+          padding: 12px;
+          text-align: left;
+          font-weight: bold;
+          border-bottom: 2px solid var(--celtic-bronze);
+        }
+
+        td {
+          padding: 10px 12px;
+          border-bottom: 1px solid var(--celtic-stone-gray);
+          color: var(--celtic-midnight);
+        }
+
+        tr:nth-child(even) {
+          background-color: rgba(80, 200, 120, 0.1);
+        }
+
+        tr:hover {
+          background-color: rgba(255, 215, 0, 0.2);
+        }
+
+        /* Forms - Celtic warrior shields inspiration */
+        form {
+          background-color: rgba(112, 128, 144, 0.1);
+          padding: 20px;
+          border-radius: 10px;
+          border: 2px solid var(--celtic-bronze);
+          margin: 20px 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea,
+        select {
+          width: 100%;
+          padding: 10px;
+          border: 2px solid var(--celtic-stone-gray);
+          border-radius: 5px;
+          background-color: var(--celtic-cream);
+          color: var(--celtic-midnight);
+          font-family: inherit;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        textarea:focus,
+        select:focus {
+          outline: none;
+          border-color: var(--celtic-emerald);
+          box-shadow: 0 0 5px rgba(80, 200, 120, 0.5);
+        }
+
+        /* Buttons - Celtic torc inspired */
+        button,
+        input[type="submit"],
+        input[type="button"] {
+          background: linear-gradient(135deg, var(--celtic-gold), var(--celtic-bronze));
+          color: var(--celtic-midnight);
+          border: 2px solid var(--celtic-bronze);
+          padding: 12px 20px;
+          border-radius: 25px;
+          cursor: pointer;
+          font-weight: bold;
+          font-family: inherit;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        button:hover,
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+          background: linear-gradient(135deg, var(--celtic-bronze), var(--celtic-gold));
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(45, 80, 22, 0.3);
+        }
+
+        /* Dividers and Sections */
+        hr {
+          border: none;
+          height: 3px;
+          background: linear-gradient(90deg, 
+            transparent, 
+            var(--celtic-gold), 
+            var(--celtic-bronze), 
+            var(--celtic-gold), 
+            transparent);
+          margin: 30px 0;
+        }
+
+        /* Blockquotes - Ancient Celtic wisdom */
+        blockquote {
+          background-color: rgba(45, 80, 22, 0.1);
+          border-left: 5px solid var(--celtic-emerald);
+          padding: 15px 20px;
+          margin: 20px 0;
+          font-style: italic;
+          color: var(--celtic-forest-green);
+          border-radius: 0 8px 8px 0;
+          position: relative;
+        }
+
+        blockquote::before {
+          content: '"';
+          font-size: 4em;
+          color: var(--celtic-gold);
+          position: absolute;
+          left: -10px;
+          top: -20px;
+          font-family: serif;
+        }
+
+        /* Code elements - Ogham script inspired */
+        code {
+          background-color: var(--celtic-stone-gray);
+          color: var(--celtic-cream);
+          padding: 3px 6px;
+          border-radius: 3px;
+          font-family: 'Courier New', monospace;
+          font-size: 0.9em;
+        }
+
+        pre {
+          background-color: var(--celtic-midnight);
+          color: var(--celtic-emerald);
+          padding: 15px;
+          border-radius: 8px;
+          overflow-x: auto;
+          border: 1px solid var(--celtic-bronze);
+        }
+
+        /* Special Celtic-themed classes */
+        .celtic-border {
+          border: 3px solid var(--celtic-gold);
+          border-image: linear-gradient(45deg, 
+            var(--celtic-gold), 
+            var(--celtic-bronze), 
+            var(--celtic-emerald)) 1;
+          padding: 15px;
+          margin: 20px 0;
+        }
+
+        .celtic-highlight {
+          background: linear-gradient(120deg, 
+            rgba(255, 215, 0, 0.3), 
+            rgba(80, 200, 120, 0.3));
+          padding: 3px 6px;
+          border-radius: 4px;
+        }
+
+        .celtic-shadow {
+          box-shadow: 
+            0 4px 8px rgba(45, 80, 22, 0.3),
+            0 2px 4px rgba(112, 128, 144, 0.2);
+        }
+
+        /* Navigation - Celtic warrior band inspired */
+        nav {
+          background-color: var(--celtic-forest-green);
+          padding: 15px 0;
+          border-bottom: 3px solid var(--celtic-gold);
+          margin-bottom: 20px;
+        }
+
+        nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          background: none;
+          border: none;
+        }
+
+        nav li {
+          margin: 0 15px;
+        }
+
+        nav a {
+          color: var(--celtic-gold);
+          text-decoration: none;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          padding: 8px 12px;
+          border-radius: 5px;
+          transition: all 0.3s ease;
+          border-bottom: none;
+        }
+
+        nav a:hover {
+          background-color: var(--celtic-bronze);
+          color: var(--celtic-cream);
+          border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Celtic CSS Usage Guide</h1>
+
+    <h2>Quick Setup</h2>
+    <p>Save the CSS as <code>celtic-style.css</code> and link it in your HTML head section:</p>
+    <pre>&lt;link rel="stylesheet" href="celtic-style.css"&gt;</pre>
+
+    <hr>
+
+    <h2>Basic HTML Elements</h2>
+    
+    <h3>Headers</h3>
+    <p>Use standard HTML headers - they're automatically styled:</p>
+    <pre>&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Section Header&lt;/h2&gt;
+&lt;h3&gt;Subsection&lt;/h3&gt;</pre>
+
+    <h3>Text and Links</h3>
+    <p>Regular paragraphs and <a href="#">links</a> work automatically. Links change color on hover with <span class="celtic-highlight">smooth transitions</span>.</p>
+
+    <h3>Lists</h3>
+    <p>Both ordered and unordered lists get Celtic-inspired styling:</p>
+    <ul>
+        <li>Unordered list item (bronze left border)</li>
+        <li>Another item with Celtic styling</li>
+        <li>Golden bullet markers</li>
+    </ul>
+
+    <ol>
+        <li>Ordered list item (forest green border)</li>
+        <li>Numbered with Celtic colors</li>
+        <li>Scroll-like background</li>
+    </ol>
+
+    <hr>
+
+    <h2>Tables</h2>
+    <p>Tables automatically get Celtic manuscript styling:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Celtic Element</th>
+                <th>Color Used</th>
+                <th>Inspiration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Headers</td>
+                <td>Forest Green</td>
+                <td>Sacred groves</td>
+            </tr>
+            <tr>
+                <td>Gold accents</td>
+                <td>Celtic Gold</td>
+                <td>Torcs and treasures</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Forms and Buttons</h2>
+    <form>
+        <input type="text" placeholder="Your name (try focusing on inputs)">
+        <input type="email" placeholder="Your email">
+        <textarea placeholder="Your message" rows="3"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <hr>
+
+    <h2>Special Celtic Classes</h2>
+    
+    <h3>Celtic Border</h3>
+    <div class="celtic-border">
+        <p>Use <code>class="celtic-border"</code> for golden Celtic-style borders around content.</p>
+    </div>
+
+    <h3>Celtic Highlight</h3>
+    <p>Use <code>class="celtic-highlight"</code> for <span class="celtic-highlight">highlighted text</span> with gradient backgrounds.</p>
+
+    <h3>Celtic Shadow</h3>
+    <div class="celtic-shadow" style="padding: 15px; background: var(--celtic-cream); margin: 20px 0;">
+        <p>Use <code>class="celtic-shadow"</code> for Celtic-themed drop shadows.</p>
+    </div>
+
+    <hr>
+
+    <h2>Quotes and Code</h2>
+    
+    <blockquote>
+        This is how blockquotes look - perfect for ancient Celtic wisdom and proverbs.
+    </blockquote>
+
+    <p>Inline code looks like this: <code>color: var(--celtic-gold)</code></p>
+
+    <pre>/* Code blocks use Celtic colors */
+.my-element {
+    color: var(--celtic-emerald);
+    background: var(--celtic-cream);
+}</pre>
+
+    <hr>
+
+    <h2>Color Variables</h2>
+    <p>Use these CSS variables in your custom styles:</p>
+    <ul>
+        <li><code>--celtic-forest-green</code> - Deep nature green</li>
+        <li><code>--celtic-emerald</code> - Vibrant Irish green</li>
+        <li><code>--celtic-gold</code> - Treasure gold</li>
+        <li><code>--celtic-bronze</code> - Metalwork bronze</li>
+        <li><code>--celtic-stone-gray</code> - Monument stone</li>
+        <li><code>--celtic-rust</code> - Warrior red</li>
+        <li><code>--celtic-midnight</code> - Mystical dark blue</li>
+        <li><code>--celtic-cream</code> - Parchment cream</li>
+    </ul>
+
+    <hr>
+
+    <h2>Quick Tips</h2>
+    <ul>
+        <li>All standard HTML elements work automatically</li>
+        <li>Add special classes for enhanced Celtic styling</li>
+        <li>Colors are inspired by nature, metalwork, and manuscripts</li>
+        <li>Hover effects add interactivity</li>
+        <li>Use the color variables for custom elements</li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+/* Celtic-Inspired CSS Stylesheet */
+
+/* CSS Variables for Celtic Color Palette */
+:root {
+  /* Primary Celtic Colors */
+  --celtic-forest-green: #2d5016;      /* Deep forest green - connection to nature */
+  --celtic-emerald: #50c878;           /* Vibrant emerald - Irish landscapes */
+  --celtic-stone-gray: #708090;        /* Stone gray - ancient monuments */
+  --celtic-gold: #ffd700;              /* Celtic gold - treasures and torcs */
+  --celtic-bronze: #cd7f32;            /* Bronze - Celtic metalwork */
+  --celtic-rust: #b7410e;              /* Rust red - warrior shields */
+  --celtic-cream: #f5f5dc;             /* Cream - parchment and bone */
+  --celtic-midnight: #1a1a2e;          /* Midnight blue - mystical nights */
+  --celtic-silver: #c0c0c0;            /* Silver - Celtic jewelry */
+  --celtic-earth: #8b4513;             /* Earth brown - connection to land */
+}
+
+/* Body and Base Elements */
+body {
+  background-color: var(--celtic-cream);
+  color: var(--celtic-midnight);
+  font-family: 'Uncial Antiqua', 'Times New Roman', serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--celtic-emerald) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, var(--celtic-forest-green) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Headers - Inspired by Celtic manuscripts */
+h1 {
+  color: var(--celtic-forest-green);
+  font-size: 2.5em;
+  text-align: center;
+  text-shadow: 2px 2px 4px var(--celtic-stone-gray);
+  border-bottom: 3px solid var(--celtic-gold);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h2 {
+  color: var(--celtic-rust);
+  font-size: 2em;
+  border-left: 5px solid var(--celtic-bronze);
+  padding-left: 15px;
+  margin-top: 25px;
+  text-shadow: 1px 1px 2px var(--celtic-stone-gray);
+}
+
+h3 {
+  color: var(--celtic-emerald);
+  font-size: 1.5em;
+  margin-top: 20px;
+  border-bottom: 1px dotted var(--celtic-stone-gray);
+  padding-bottom: 5px;
+}
+
+h4, h5, h6 {
+  color: var(--celtic-bronze);
+  margin-top: 15px;
+}
+
+/* Paragraphs and Text */
+p {
+  color: var(--celtic-midnight);
+  margin-bottom: 15px;
+  text-align: justify;
+  padding: 0 10px;
+}
+
+/* Links - Celtic knotwork inspired */
+a {
+  color: var(--celtic-emerald);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--celtic-gold);
+  border-bottom: 2px solid var(--celtic-gold);
+  text-shadow: 1px 1px 2px var(--celtic-stone-gray);
+}
+
+a:visited {
+  color: var(--celtic-bronze);
+}
+
+/* Lists - Styled like ancient Celtic scrolls */
+ul {
+  background-color: rgba(112, 128, 144, 0.1);
+  border-left: 4px solid var(--celtic-bronze);
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+ol {
+  background-color: rgba(45, 80, 22, 0.1);
+  border-left: 4px solid var(--celtic-forest-green);
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+li {
+  color: var(--celtic-midnight);
+  margin-bottom: 8px;
+  padding-left: 5px;
+}
+
+li::marker {
+  color: var(--celtic-gold);
+  font-weight: bold;
+}
+
+/* Tables - Like Celtic manuscripts */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  background-color: var(--celtic-cream);
+  border: 2px solid var(--celtic-stone-gray);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--celtic-forest-green);
+  color: var(--celtic-gold);
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid var(--celtic-bronze);
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--celtic-stone-gray);
+  color: var(--celtic-midnight);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(80, 200, 120, 0.1);
+}
+
+tr:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+}
+
+/* Forms - Celtic warrior shields inspiration */
+form {
+  background-color: rgba(112, 128, 144, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--celtic-bronze);
+  margin: 20px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--celtic-stone-gray);
+  border-radius: 5px;
+  background-color: var(--celtic-cream);
+  color: var(--celtic-midnight);
+  font-family: inherit;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--celtic-emerald);
+  box-shadow: 0 0 5px rgba(80, 200, 120, 0.5);
+}
+
+/* Buttons - Celtic torc inspired */
+button,
+input[type="submit"],
+input[type="button"] {
+  background: linear-gradient(135deg, var(--celtic-gold), var(--celtic-bronze));
+  color: var(--celtic-midnight);
+  border: 2px solid var(--celtic-bronze);
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background: linear-gradient(135deg, var(--celtic-bronze), var(--celtic-gold));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(45, 80, 22, 0.3);
+}
+
+/* Dividers and Sections */
+hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--celtic-gold), 
+    var(--celtic-bronze), 
+    var(--celtic-gold), 
+    transparent);
+  margin: 30px 0;
+}
+
+/* Blockquotes - Ancient Celtic wisdom */
+blockquote {
+  background-color: rgba(45, 80, 22, 0.1);
+  border-left: 5px solid var(--celtic-emerald);
+  padding: 15px 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: var(--celtic-forest-green);
+  border-radius: 0 8px 8px 0;
+  position: relative;
+}
+
+blockquote::before {
+  content: '"';
+  font-size: 4em;
+  color: var(--celtic-gold);
+  position: absolute;
+  left: -10px;
+  top: -20px;
+  font-family: serif;
+}
+
+/* Code elements - Ogham script inspired */
+code {
+  background-color: var(--celtic-stone-gray);
+  color: var(--celtic-cream);
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--celtic-midnight);
+  color: var(--celtic-emerald);
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--celtic-bronze);
+}
+
+/* Special Celtic-themed classes */
+.celtic-border {
+  border: 3px solid var(--celtic-gold);
+  border-image: linear-gradient(45deg, 
+    var(--celtic-gold), 
+    var(--celtic-bronze), 
+    var(--celtic-emerald)) 1;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.celtic-highlight {
+  background: linear-gradient(120deg, 
+    rgba(255, 215, 0, 0.3), 
+    rgba(80, 200, 120, 0.3));
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.celtic-shadow {
+  box-shadow: 
+    0 4px 8px rgba(45, 80, 22, 0.3),
+    0 2px 4px rgba(112, 128, 144, 0.2);
+}
+
+/* Navigation - Celtic warrior band inspired */
+nav {
+  background-color: var(--celtic-forest-green);
+  padding: 15px 0;
+  border-bottom: 3px solid var(--celtic-gold);
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background: none;
+  border: none;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: var(--celtic-gold);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  border-bottom: none;
+}
+
+nav a:hover {
+  background-color: var(--celtic-bronze);
+  color: var(--celtic-cream);
+  border-bottom: none;
+}
