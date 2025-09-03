@@ -15,11 +15,29 @@
   --celtic-earth: #8b4513;             /* Earth brown - connection to land */
 }
 
+/* Import modern Celtic-inspired fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* MODERN CELTIC FONT VERSION */
+.celtic-modern {
+  /* Body - Highly readable with Celtic character */
+  font-family: 'Spectral', 'Georgia', 'Times New Roman', serif;
+}
+
+.celtic-modern h1,
+.celtic-modern h2,
+.celtic-modern h3,
+.celtic-modern h4,
+.celtic-modern h5,
+.celtic-modern h6 {
+  /* Headers - Elegant with Celtic feel */
+  font-family: 'Cormorant Garamond', 'Garamond', 'Georgia', serif;
+}
+
 /* Body and Base Elements */
 body {
   background-color: var(--celtic-cream);
   color: var(--celtic-midnight);
-  font-family: 'Uncial Antiqua', 'Times New Roman', serif;
   line-height: 1.6;
   margin: 0;
   padding: 20px;
