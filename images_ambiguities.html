@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images and Ambiguities</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        :root {
+            /* Mid-20th Century Elegant Neutral Palette */
+            --cream: #faf7f2;
+            --warm-white: #f8f6f0;
+            --soft-gray: #e8e5e0;
+            --medium-gray: #a8a5a0;
+            --charcoal: #4a4a4a;
+            --deep-charcoal: #2c2c2c;
+            --warm-beige: #f0ede8;
+            --taupe: #b8b5b0;
+            --ink-black: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background-color: var(--cream);
+            color: var(--deep-charcoal);
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--warm-white) 0%, var(--soft-gray) 100%);
+            padding: 60px 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--medium-gray);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: var(--ink-black);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            font-style: italic;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--warm-beige);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--taupe);
+        }
+
+        nav ul {
+            list-style: none;
+            display: inline-flex;
+            gap: 50px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--deep-charcoal);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--ink-black);
+            border-bottom: 2px solid var(--charcoal);
+        }
+
+        /* Main Content Container */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Alternating Content Rows */
+        .content-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+            gap: 60px;
+            min-height: 400px;
+        }
+
+        .content-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Image Styling */
+        .image-container {
+            width: 40%;
+            flex-shrink: 0;
+        }
+
+        .art-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 3px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            filter: grayscale(100%) contrast(1.1);
+        }
+
+        .art-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+
+        /* Text Content Styling */
+        .text-content {
+            width: 60%;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
+            border-radius: 5px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--taupe);
+        }
+
+        .text-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--ink-black);
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .text-content .meta {
+            color: var(--medium-gray);
+            font-style: italic;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        .text-content .poetry {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--deep-charcoal);
+            white-space: pre-line;
+            font-style: italic;
+        }
+
+        .text-content .prose {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--deep-charcoal);
+            text-align: justify;
+        }
+
+        /* Quote styling for special emphasis */
+        .quote {
+            border-left: 3px solid var(--charcoal);
+            padding-left: 25px;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--charcoal);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--soft-gray) 0%, var(--warm-beige) 100%);
+            padding: 50px 40px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid var(--taupe);
+        }
+
+        footer p {
+            color: var(--charcoal);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-row,
+            .content-row:nth-child(even) {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .image-container,
+            .text-content {
+                width: 100%;
+            }
+
+            .art-image {
+                height: 300px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .content-container {
+                padding: 40px 20px;
+            }
+
+            .text-content {
+                padding: 30px 25px;
+            }
+        }
+
+        /* Elegant separator */
+        .separator {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--medium-gray);
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Images and Ambiguities</h1>
+        <p class="subtitle">Original Poetry, Prose & Black and White Photography</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#poetry">Poetry</a></li>
+            <li><a href="#prose">Prose</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-container">
+        <!-- Row 1: Image Left, Text Right -->
+        <div class="content-row">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&auto=format" alt="Misty landscape in black and white" class="art-image">
+            </div>
+            <div class="text-content">
+                <h2>Morning Whispers</h2>
+                <div class="meta">Original Poetry | March 2024</div>
+                <div class="poetry">In the gray between sleep and waking,
+Where shadows dance with light,
+I find the words that daylight
+Would never dare to speak.
+
+The mist holds secrets
+In its gentle embrace,
+Each droplet a story
+Waiting to be told.
+
+Here, in this liminal space,
+Truth wears no costume,
+And beauty needs no reason
+To simply be.</div>
+            </div>
+        </div>
+
+        <!-- Row 2: Text Left, Image Right -->
+        <div class="content-row">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&h=600&fit=crop&auto=format" alt="Abstract architectural shadows" class="art-image">
+            </div>
+            <div class="text-content">
+                <h2>Geometry of Memory</h2>
+                <div class="meta">Prose Reflection | February 2024</div>
+                <div class="prose">
+                    Memory constructs itself in angles and curves, each recollection a deliberate architecture of what was and what might have been. We build our past in shadows and light, selecting which corners to illuminate and which to leave in comfortable darkness.
+                    
+                    The photographer understands this instinctively—that truth lies not in the documentation of reality, but in the careful curation of perception. Each frame is a decision, each exposure a choice about what deserves remembrance.
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Image Left, Text Right -->
+        <div class="content-row">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?w=800&h=600&fit=crop&auto=format" alt="Solitary tree in field" class="art-image">
+            </div>
+            <div class="text-content">
+                <h2>Solitude</h2>
+                <div class="meta">Original Poetry | January 2024</div>
+                <div class="poetry">One tree against the sky—
+Not lonely, but complete,
+Its branches write love letters
+To the passing clouds.
+
+What is solitude
+But conversation
+With the deeper self,
+The one who knows
+
+That being alone
+Is not the same
+As being empty,
+That silence speaks
+
+In languages
+Only the heart
+Can truly
+Understand.</div>
+            </div>
+        </div>
+
+        <!-- Row 4: Text Left, Image Right -->
+        <div class="content-row">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800&h=600&fit=crop&auto=format" alt="Open book with coffee" class="art-image">
+            </div>
+            <div class="text-content">
+                <h2>The Weight of Words</h2>
+                <div class="meta">Prose Meditation | December 2023</div>
+                <div class="quote">
+                    "Every word carries the weight of its intentions, the history of its usage, and the promise of its potential. In the careful arrangement of language, we find not just meaning, but the architecture of understanding itself."
+                </div>
+                <div class="prose">
+                    The blank page intimidates not because it is empty, but because it holds infinite possibility. Each word placed upon it narrows that infinity, defines it, gives it shape. The writer's task is not to fill the emptiness but to honor it—to recognize that in the space between words lies the true poetry.
+                </div>
+            </div>
+        </div>
+
+        <div class="separator">◆ ◆ ◆</div>
+
+        <!-- Row 5: Image Left, Text Right -->
+        <div class="content-row">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop&auto=format" alt="Misty forest path" class="art-image">
+            </div>
+            <div class="text-content">
+                <h2>Paths Untaken</h2>
+                <div class="meta">Original Poetry | November 2023</div>
+                <div class="poetry">The forest keeps its own counsel,
+Each path a question
+Rather than an answer,
+Each step an act of faith.
+
+We walk not knowing
+Where we're headed,
+Only that the journey
+Itself is the destination.
+
+In the mist ahead
+Lie all our possible futures,
+Waiting patiently
+For us to choose
+
+Which story
+We dare to live,
+Which dream
+We're brave enough to follow.</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Images and Ambiguities. All original works and photographs are the property of the artist.</p>
+        <p>A celebration of the intersection between visual art and literary expression.</p>
+    </footer>
+</body>
+</html>
